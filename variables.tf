@@ -24,12 +24,6 @@ variable "branches" {
   default = []
 }
 
-variable "defaults" {
-  description = "(Deprecated) DEPRECATED. Please convert defaults to Terraform Module for_each"
-  type        = any
-  default     = {}
-}
-
 variable "description" {
   description = "(Optional) A description of the repository."
   type        = string
@@ -43,8 +37,8 @@ variable "homepage_url" {
 }
 
 variable "private" {
-  description = "(Optional) (DEPRECATED: use visibility)"
-  type        = bool
+  description = "(Optional) DEPRECATED: use visibility"
+  type        = string
   default     = null
 }
 
@@ -100,6 +94,17 @@ variable "delete_branch_on_merge" {
   description = "(Optional) Whether or not to delete the merged branch after merging a pull request. (Default: false)"
   type        = bool
   default     = null
+}
+
+variable "defaults" {
+  description = "(Deprecated) DEPRECATED. Convert defaults to Terraform Module for_each."
+  type        = any
+  default     = {}
+}
+variable "web_commit_signoff_required" {
+  description = "Require commit signoff for web commit. (Default: false). Set to null to inherit from org settings"
+  type        = bool
+  default     = true
 }
 
 variable "has_downloads" {
