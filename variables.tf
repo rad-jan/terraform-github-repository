@@ -36,6 +36,12 @@ variable "homepage_url" {
   default     = null
 }
 
+variable "private" {
+  description = "(Optional) DEPRECATED: use visibility"
+  type        = string
+  default     = null
+}
+
 variable "visibility" {
   description = "(Optional) Can be 'public', 'private' or 'internal' (GHE only).The visibility parameter overrides the private parameter. Defaults to 'private' if neither private nor visibility are set, default to state of private parameter if it is set."
   type        = string
@@ -90,10 +96,15 @@ variable "delete_branch_on_merge" {
   default     = null
 }
 
+variable "defaults" {
+  description = "(Deprecated) DEPRECATED. Convert defaults to Terraform Module for_each."
+  type        = any
+  default     = {}
+}
 variable "web_commit_signoff_required" {
   description = "Require commit signoff for web commit. (Default: false). Set to null to inherit from org settings"
   type        = bool
-  default     = null
+  default     = true
 }
 
 variable "has_downloads" {
@@ -103,7 +114,7 @@ variable "has_downloads" {
 }
 
 variable "auto_init" {
-  description = "(Optional) Wether or not to produce an initial commit in the repository. (Default: true)"
+  description = "(Optional) Whether or not to produce an initial commit in the repository. (Default: true)"
   type        = bool
   default     = null
 }

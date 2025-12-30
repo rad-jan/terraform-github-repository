@@ -89,25 +89,26 @@ locals {
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "github_repository" "repository" {
-  name                   = var.name
-  description            = var.description
-  homepage_url           = local.homepage_url
-  visibility             = local.visibility
-  has_issues             = local.has_issues
-  has_projects           = local.has_projects
-  has_wiki               = local.has_wiki
-  allow_merge_commit     = local.allow_merge_commit
-  allow_rebase_merge     = local.allow_rebase_merge
-  allow_squash_merge     = local.allow_squash_merge
-  allow_auto_merge       = local.allow_auto_merge
-  delete_branch_on_merge = local.delete_branch_on_merge
-  is_template            = local.is_template
-  has_downloads          = local.has_downloads
-  auto_init              = local.auto_init
-  gitignore_template     = local.gitignore_template
-  license_template       = local.license_template
-  archived               = var.archived
-  topics                 = local.topics
+  name                        = var.name
+  description                 = var.description
+  homepage_url                = local.homepage_url
+  visibility                  = local.visibility
+  has_issues                  = local.has_issues
+  has_projects                = local.has_projects
+  has_wiki                    = local.has_wiki
+  allow_merge_commit          = local.allow_merge_commit
+  allow_rebase_merge          = local.allow_rebase_merge
+  allow_squash_merge          = local.allow_squash_merge
+  allow_auto_merge            = local.allow_auto_merge
+  delete_branch_on_merge      = local.delete_branch_on_merge
+  web_commit_signoff_required = var.web_commit_signoff_required
+  is_template                 = local.is_template
+  has_downloads               = local.has_downloads
+  auto_init                   = local.auto_init
+  gitignore_template          = local.gitignore_template
+  license_template            = local.license_template
+  archived                    = var.archived
+  topics                      = local.topics
 
   archive_on_destroy   = var.archive_on_destroy
   vulnerability_alerts = local.vulnerability_alerts
