@@ -1,6 +1,6 @@
 <!--
 SPDX-FileCopyrightText: 2020-2022 Mineiros GmbH <hello@mineiros.io>
-SPDX-FileCopyrightText: 2025 Jan Larsen <cyberwassp@gmail.com>
+SPDX-FileCopyrightText: 2025 Radek Janik <cyberwassp@gmail.com>
 
 SPDX-License-Identifier: Apache-2.0
 -->
