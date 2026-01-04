@@ -151,7 +151,9 @@ resource "github_repository" "repository" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 locals {
-  branches_map = { for b in var.branches : b.name => b }
+  branches_map = { for b in var.branches : b.name => b
+    if b.name != var.default_branch
+  }
 }
 
 resource "github_branch" "branch" {
