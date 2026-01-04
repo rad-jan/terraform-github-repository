@@ -202,17 +202,17 @@ resource "github_branch_protection" "branch_protection" {
 
   pattern = var.branch_protections_v4[each.value].pattern
 
-  allows_deletions                = try(var.branch_protections_v4[each.value].allows_deletions, false)
-  allows_force_pushes             = try(var.branch_protections_v4[each.value].allows_force_pushes, false)
+  allows_deletions    = try(var.branch_protections_v4[each.value].allows_deletions, false)
+  allows_force_pushes = try(var.branch_protections_v4[each.value].allows_force_pushes, false)
   dynamic "restrict_pushes" {
     for_each = (
       try(var.branch_protections_v4[each.value].blocks_creations, null) != null ||
-      length(try(var.branch_protections_v4[each.value].push_restrictions, [])) > 0) ? [1]: []
+    length(try(var.branch_protections_v4[each.value].push_restrictions, [])) > 0) ? [1] : []
 
-      content {
-        blocks_creations = try(var.branch_protections_v4[each.value].blocks_creations, false)
-        push_allowances  = try(var.branch_protections_v4[each.value].push_restrictions, [])
-      }
+    content {
+      blocks_creations = try(var.branch_protections_v4[each.value].blocks_creations, false)
+      push_allowances  = try(var.branch_protections_v4[each.value].push_restrictions, [])
+    }
   }
   enforce_admins                  = try(var.branch_protections_v4[each.value].enforce_admins, true)
   require_conversation_resolution = try(var.branch_protections_v4[each.value].require_conversation_resolution, false)

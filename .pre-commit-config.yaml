@@ -1,5 +1,5 @@
 repos:
-  - repo: https://github.com/mineiros-io/pre-commit-hooks
+  - repo: https://github.com/terramate-io/pre-commit-hooks
     rev: v0.4.1
     hooks:
       - id: terraform-fmt
@@ -7,6 +7,6 @@ repos:
         exclude: ^examples|.terraform/
       - id: tflint
       - id: phony-targets
-      - id: terradoc-validate
-      - id: terradoc-fmt
-      - id: terradoc-generate
+#       - id: terradoc-validate
+#       - id: terradoc-fmt
+#       - id: terradoc-generate
