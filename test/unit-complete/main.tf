@@ -172,7 +172,7 @@ module "repository-with-defaults" {
   name           = var.repository_with_defaults_name
   description    = var.repository_with_defaults_description
   defaults       = var.repository_defaults
-  default_branch = "development"
+  default_branch = "main"
 
   branches = [
     { name = "development" },

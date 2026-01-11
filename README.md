@@ -16,6 +16,12 @@ This is a maintained fork of [mineiros-io/terraform-github-repository](https://g
 
 **Attention**: This module requires the `integrations/github` provider and is incompatible with the deprecated `hashicorp/github` provider.
 
+## Warning
+
+**Warning**: As this repository is being brough up to GitHub provider v6, it is
+currently not ready for production, development only. Breaking changes can and
+will be introduced in the meantime. You've been warned.
+
 ## Table of Contents
 
 - [Description](#description)
