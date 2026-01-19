@@ -109,6 +109,7 @@ resource "github_repository" "repository" {
   license_template            = local.license_template
   archived                    = var.archived
   topics                      = local.topics
+  allow_forking               = var.allow_forking
 
   archive_on_destroy   = var.archive_on_destroy
   vulnerability_alerts = local.vulnerability_alerts
